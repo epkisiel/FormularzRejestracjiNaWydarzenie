@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormularzRejestracjiNaWydarzenie.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="15">
+
+            <VerticalStackLayout
+                Spacing="5"
+                Padding="25,0">
+                <Label 
+                    Text="Dane uczestnika"
+                    FontSize="Subtitle"/>
+
+                <Label
+                    Text="Imię i nazwisko"/>
+                <Entry 
+                    x:Name="ImieINazwiskoEntry"/>
+
+                <Label
+                    Text="Email"/>
+                <Entry
+                    x:Name="EmailEntry"
+                    Keyboard="Email"/>
+
+                <Picker
+                    x:Name="FirmaPicker"
+                    Title="Wybierz firmę/organizację">
+                    <Picker.Items>
+                        <x:String>Firma1</x:String>
+                        <x:String>Firma2</x:String>
+                        <x:String>Firma3</x:String>
+                        <x:String>Firma4</x:String>
+                        <x:String>Firma5</x:String>
+                        <x:String>Inna</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Spacing="10"
+                Padding="25,0">
+                <Label 
+                    Text="Szczegóły uczestnictwa"
+                    FontSize="Subtitle"/>
+
+                <Label
+                    Text="Wybierz datę konferencji. Dostępne daty: 16.02.2026, 18.02.2026, 23.02.2026"/>
+                <DatePicker
+                    x:Name="DataPicker"
+                    DateSelected="Data_DateSelected"/>
+                <Label 
+                    x:Name="DataInfoLabel"
+                    Text="Termin niedostępny"
+                    TextColor="Red"
+                    IsVisible="False"/>
+
+                <Label
+                    Text="Wybierz pakiet"/>
+
+                <RadioButton
+                    x:Name="RadioButtonBasic"
+                    Content="Basic (wstęp + materiały) - 200 zł"
+                    Value="Basic"
+                    GroupName="Pakiet"
+                    CheckedChanged="RadioButton_CheckedChanged"/>
+
+                <RadioButton
+                    Content="Standard (+lunch) - 350 zł"
+                    Value="Standard"
+                    GroupName="Pakiet"
+                    CheckedChanged="RadioButton_CheckedChanged"/>
+
+                <RadioButton
+                    Content="Premium (+warsztat) - 500 zł"
+                    Value="Premium"
+                    GroupName="Pakiet"
+                    CheckedChanged="RadioButton_CheckedChanged"/>
+
+                <Label 
+                    Text="Wybierz liczbę osób dodatkowych (0-3, każda +100 zł do ceny pakietu)"/>
+                <Stepper
+                    x:Name="DodatkoweOsobyStepper"
+                    Maximum="3"
+                    Minimum="0"
+                    Value="0"
+                    ValueChanged="DodatkoweOsobyStepper_ValueChanged"/>
+                <Label 
+                    Text="Osoby dodatkowe: 0"/>
+
+            </VerticalStackLayout>
+
+            <Label 
+                x:Name="CenaCalkowita"
+                Text="Cena całkowita: 200 zł"/>
+            <Button
+                Text="Zarejestruj się"
+                Clicked="Button_Clicked"/>
+            <Label
+                x:Name="InfromacjaLabel"
+                Text="Należy wypełnić wszystkie pola"
+                IsVisible="False"
+                TextColor="Red"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
