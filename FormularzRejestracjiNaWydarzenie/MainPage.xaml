@@ -49,15 +49,14 @@
                     FontSize="Subtitle"/>
 
                 <Label
-                    Text="Wybierz datę konferencji. Dostępne daty: 16.02.2026, 18.02.2026, 23.02.2026"/>
+                    Text="Wybierz datę konferencji. Dostępne daty: 16.06.2026, 18.06.2026, 23.06.2026"/>
                 <DatePicker
                     x:Name="DataPicker"
-                    DateSelected="Data_DateSelected"/>
+                    DateSelected="Data_DateSelected" />
                 <Label 
                     x:Name="DataInfoLabel"
-                    Text="Termin niedostępny"
-                    TextColor="Red"
-                    IsVisible="False"/>
+                    Text="Wybrana data: 16.06.2026"
+                    TextColor="Black"/>
 
                 <Label
                     Text="Wybierz pakiet"/>
@@ -90,6 +89,7 @@
                     Value="0"
                     ValueChanged="DodatkoweOsobyStepper_ValueChanged"/>
                 <Label 
+                    x:Name="DodatkoweOsobyLabel"
                     Text="Osoby dodatkowe: 0"/>
 
             </VerticalStackLayout>
